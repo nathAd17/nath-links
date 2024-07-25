@@ -28,8 +28,10 @@
                     <!-- header -->
                     <div class="flex flex-col mx-auto items-center pb-10">
                         <img class="w-40 h-40 mb-3 object-cover rounded-full shadow-md shadow-yellow-300" src="/profile.jpg"
-                            alt="Bonnie image" />
-                        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">@Bonnie Green</h5>
+                            alt="profil" />
+                            <div class="link" v-for="ln in links" :key="ln.id">
+                                <a v-if="ln.id===3" :href="ln.url" class="mb-1 text-xl font-medium text-gray-900 dark:text-white">@nath.ad17</a>
+                            </div>
                         <div class="flex mt-4 md:mt-6">
                             <label class="switch inline-flex items-center relative z-50 cursor-pointer"
                                 for="dark-toggle">
