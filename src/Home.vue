@@ -71,7 +71,7 @@
                             v-for="link in links" :key="link.id">
                             <a :href="link.url" target="_blank" class="w-full rounded-xl">
                                 <div class="flex items-center justify-start gap-4">
-                                    <img src="/vite.svg" alt="logo" class="rounded-full p-1 border border-gray-500 ">
+                                    <img :src="getIcon(link.url)" alt="logo" class="rounded-full w-10 h-10 p-1 border border-gray-500 ">
                                     <h1 class="text-lg font-bold text-gray-900 dark:text-white">
                                         {{link.label}}
                                     </h1>
@@ -121,10 +121,10 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 const links = ref([
-    { id: 1, label: 'Portfolio', url: 'https://vnath-portfolio.vercel.app/', logo: ''},
-    { id: 2, label: 'Github', url: '#about', logo: '' },
-    { id: 3, label: 'Tiktok', url: '#project', logo: '' },
-    { id: 4, label: 'Youtube', url: '#contact', logo: '' }
+    { id: 1, label: 'Portfolio', url: 'https://vnath-portfolio.vercel.app/', logo: '', isCopied: false },
+    { id: 2, label: 'Github', url: 'https://github.com/nathAd17/', logo: '', isCopied: false },
+    { id: 3, label: 'Instagram', url: 'https://www.instagram.com/nath.ad17', logo: '', isCopied: false },
+    { id: 4, label: 'Facebook', url: 'https://www.facebook.com/', logo: '', isCopied: false }
 ]);
 const isDarkMode = ref(false);
 
@@ -142,6 +142,18 @@ const copy = (link) => {
     }).catch(err => {
         console.error('Failed to copy: ', err);
     });
+};
+const getIcon = (url) => {
+    if (url.includes('github.com')) return '/github.svg';
+    if (url.includes('tiktok.com')) return '/tiktok.svg';
+    if (url.includes('youtube.com')) return '/youtube.svg';
+    if (url.includes('vercel.app')) return '/vercel.svg';
+    if (url.includes('facebook.com')) return '/facebook.svg';
+    if (url.includes('instagram.com')) return '/instagram.svg';
+    if (url.includes('whatsapp.com')) return '/whatsapp.svg';
+    if (url.includes('twitter.com')) return '/x.svg';
+    // tambahkan kondisi lain sesuai kebutuhan
+    return '/Globe.svg'; // icon default jika tidak ditemukan
 };
 onMounted(() => {
     isDarkMode.value = localStorage.getItem('darkMode') === 'true';
