@@ -81,7 +81,7 @@
                             </a>
                             <div class="relative">
                                 <!-- button copy to clipboard -->
-                                <button @click="copy(link)" class="rounded-full bg-gray-300 p-2 dark:bg-gray-500">
+                                <button @click="copy(link)" aria-label="copy-link" title="copy" class="rounded-full bg-gray-300 p-2 dark:bg-gray-500">
                                     <template v-if="link.isCopied">
                                         <svg class="h-6 w-6 text-gray-800 dark:text-white" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
