@@ -30,7 +30,7 @@
                         <img class="mb-3 h-40 w-40 rounded-full object-cover shadow-md shadow-yellow-300" src="/profile.jpg"
                             alt="profil" />
                             <div class="link" v-for="ln in links" :key="ln.id">
-                                <a v-if="ln.id===3" :href="ln.url" class="mb-1 text-xl font-medium text-gray-900 dark:text-white">@nath.ad17</a>
+                                <a v-if="ln.id===3" :href="ln.url" class="mb-1 text-xl font-medium text-gray-900 dark:text-white">@nath.ady</a>
                             </div>
                         <div class="mt-4 flex md:mt-6">
                             <label class="switch relative z-50 inline-flex cursor-pointer items-center"
